@@ -1,0 +1,24 @@
+{
+    "name": "Blockify",
+    "version": "0.1",
+    "description": "A Simple and Powerful Ad Blocker for Websites (Beta) By Aniruddha Thakur",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "icons": {
+        "512": "logo.png"
+    },
+
+    "host_permissions": ["<all_urls>"]
+}
