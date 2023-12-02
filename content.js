@@ -2,9 +2,7 @@ function startExtension() {
     let textScripts = document.querySelectorAll("script[type='text/javascript']");
     if (textScripts) {
         for (let i = 0; i < textScripts.length; i++) {
-            console.log(textScripts[i])
             textScripts[i].remove();
-            console.log("script removed");
         }
     }
 
