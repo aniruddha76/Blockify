@@ -1,4 +1,13 @@
 function startExtension() {
+    let textScripts = document.querySelectorAll("script[type='text/javascript']");
+    if (textScripts) {
+        for (let i = 0; i < textScripts.length; i++) {
+            console.log(textScripts[i])
+            textScripts[i].remove();
+            console.log("script removed");
+        }
+    }
+
     let frame = document.getElementsByTagName("iframe");
     if (frame) {
         for (let i = 0; i < frame.length; i++) {
@@ -22,16 +31,6 @@ function startExtension() {
     if (adsClass) {
         for (let i = 0; i < adsClass.length; i++) {
             adsClass[i].style.display = "none";
-        }
-    }
-
-    let adScripts = document.querySelectorAll("script");
-    if (adScripts) {
-        for (let i = 0; i < adScripts.length; i++) {
-            let keyword = "fr2023_loer.js"
-            if (adScripts[i].src && adScripts[i].src.includes(keyword)) {
-                adScripts[i].remove();
-            }
         }
     }
 
