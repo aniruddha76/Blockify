@@ -2,7 +2,7 @@ function startExtension() {
     let adScripts = document.querySelectorAll("script");
     if (adScripts) {
         for (let i = 0; i < adScripts.length; i++) {
-            if (adScripts[i].src.includes("ad-provider")) {
+            if (adScripts[i].src.includes("ad-provider") || adScripts[i].src.includes("ads.js")) {
                 adScripts[i].remove();
             }
         }
