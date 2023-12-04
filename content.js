@@ -1,8 +1,10 @@
 function startExtension() {
-    let textScripts = document.querySelectorAll("script[type='text/javascript']");
-    if (textScripts) {
-        for (let i = 0; i < textScripts.length; i++) {
-            textScripts[i].remove();
+    let adScripts = document.querySelectorAll("script");
+    if (adScripts) {
+        for (let i = 0; i < adScripts.length; i++) {
+            if (adScripts[i].src.includes("ad-provider")) {
+                adScripts[i].remove();
+            }
         }
     }
 
@@ -32,21 +34,12 @@ function startExtension() {
         }
     }
 
-    let videos = document.getElementsByTagName("video");
-    if (videos) {
-        for (let i = 0; i < videos.length; i++) {
-            videos[i].style.display = "none";
-        }
-    }
-
     let adsByGoogle = document.getElementsByClassName("adsbygoogle");
     if (adsByGoogle) {
         for (let i = 0; i < adsByGoogle.length; i++) {
             adsByGoogle[i].style.display = "none";
         }
     }
-
-    console.log("Removed All Ads")
 }
 
 startExtension();
